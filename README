@@ -1,0 +1,25 @@
+##pretreatment and file-checking:
+check                                                 INCAR/POSCAR/POTCAR/KPOINTS/vasp*
+clearvasp
+result                                                *.o*/*.e*/OSZICAR 
+getPOTCAR        several argv(Ni, Al,...)              
+energy_drift     1 argv(number of total atoms)        INCAR/OUTCAR
+
+
+BADF_AlNiAl      1 argv(cutoff radius of NiAl)        XDATCAR      the bond angle distribution function of Al-Ni-Al
+CNA_total        1 argv(cutoff radius of total pcf)   XDATCAR      common neighbour analysis of all atoms
+CNDistribution                                        
+CommonNeighbourAnalysis
+DOS_average
+dosstructure
+meanClusterSize
+MSD_VAF
+PCF_PCN_WC_COMPACTNESS
+PCN_manual
+Total_PCF
+VoronoiDistribution
+VoronoiProcess
+VoronoiProcess_1000
+VoronoiProcess_1000_new
+VoronoiProcess_total
+VoronoiProcess_total_new

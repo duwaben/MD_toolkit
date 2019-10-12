@@ -1,0 +1,13 @@
+# !/bin/bash
+
+date > time
+if [ -f ./voronoiTessellation/VORONOI_RESULT ]
+then
+	rm voronoiTessellation/VORONOI_RESULT
+fi 
+for i in 0 1000 2000 
+do
+	VoronoiProcess_1000 $i
+done
+echo >> time
+date >> time
