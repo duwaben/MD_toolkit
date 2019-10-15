@@ -1,9 +1,0 @@
-# !/bin/bash
-
-for i in CHG CHGCAR CONTCAR DOSCAR EIGENVAL *.e* *.o* OSZICAR OUTCAR PCDAT time vasprun.xml WAVECAR XDATCAR pressure* log
-do 
-	if [ -f $i ]
-	then 
-		rm $i
-	fi
-done
