@@ -11,8 +11,8 @@ using namespace std;
 #define delta_r 0.01
 #define gap 10
 #define Pi 3.141593
-#define NOMIT 27000
-#define NSTEP 3000
+#define NOMIT 27000 //ingore NOMIT steps
+#define NSTEP 3000 //use NSTEP steps
 #define NATOM 200 //NATOM should not be set in my vision.
 
 #define MAX_L   20      //default  20
@@ -140,6 +140,7 @@ void structureFactors_XX(int numstart1, int numend1)
 						dv = v1[ni]-v1[nj];
 						dw = w1[ni]-w1[nj];
 
+						//the PBC is optional
 						if(du > LATTICE/2) du -= LATTICE;
 						if(du < -LATTICE/2) du += LATTICE;
 						if(dv > LATTICE/2) dv -= LATTICE;
@@ -204,7 +205,7 @@ void structureFactors_XY(int numstart1, int numend1, int numstart2, int numend2)
 						du = u1[ni]-u1[nj];
 						dv = v1[ni]-v1[nj];
 						dw = w1[ni]-w1[nj];
-
+						//the PBC is optional
 						if(du > LATTICE/2) du -= LATTICE;
 						if(du < -LATTICE/2) du += LATTICE;
 						if(dv > LATTICE/2) dv -= LATTICE;
